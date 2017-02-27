@@ -1,3 +1,6 @@
+const path = require('path');
+const config = require('config');
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -17,6 +20,9 @@ module.exports = {
     }]
   },
   resolve: {
+    alias: {
+      config: path.join(__dirname, 'config', process.env.NODE_ENV)
+    },
     extensions: ['', '.js', '.jsx']
   },
   node: {
